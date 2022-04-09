@@ -14,6 +14,6 @@ public class AnnotationTest {
         Student student = (Student) applicationContext.getBean("student");
         studentController.insertStudent(student);
         logger.error("error");
-        logger.info("info");
+        logger.info("in11fo");
     }
 }
