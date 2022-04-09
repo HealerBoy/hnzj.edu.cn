@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="hnzj.edu.cn:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/hnzj_edu_cn_Web</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="hnzj.edu.cn/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="hnzj.edu.cn" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
