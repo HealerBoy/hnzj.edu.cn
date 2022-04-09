@@ -13,7 +13,7 @@ public class Student {
     private String name;
     @Value("21")
     private String age;
-    @Value("1")
+    @Value("男")
     private String sex;
     @Value("410823200110040216")
     private String idCard;
@@ -21,11 +21,11 @@ public class Student {
     private String phone;
     @Value("2030201281")
     private String studentNumber;
-    @Value("2030201281")
+    @Value("2")
     private int gradeId;
-    @Value("2030201281")
+    @Value("1")
     private int academyId;
-    @Value("2030201281")
+    @Value("1")
     private int majorId;
     @Value("1")
     private int classesId;

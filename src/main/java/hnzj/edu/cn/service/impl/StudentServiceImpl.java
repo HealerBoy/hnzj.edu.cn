@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 @Service("studentService")
 public class StudentServiceImpl implements StudentService {
     @Resource( name = "studentDao")
-    private StudentDao studentDao;
+    StudentDao studentDao;
     @Override
     public int insertStudent(Student student) {
         return this.studentDao.insertStudent(student);

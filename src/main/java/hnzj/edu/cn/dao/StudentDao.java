@@ -1,5 +1,4 @@
 package hnzj.edu.cn.dao;
-
 import hnzj.edu.cn.entity.Student;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -11,11 +10,9 @@ public interface StudentDao {
     int insertStudent(Student student);
     @Delete("delete from student where id = #{id}")
     int deleteById(int id);
-    @Update("update student set name=#{name},age=#{age],sex=#{sex},idCard=#{idCard},phone=#{phone}," +
-            "studentNumber=#{studentNumber},gradeId=#{gradeId},academyId=#{academyId},majorId=#{majorId},classesId=#{classesId}"+
-            "where id =#{id}")
-    int updateStudent(Student student);
 
+    //@Update("update student set name=#{name}")
+    int updateStudent(Student student);
     @Select("select * from student where id = #{id}")
     Student selectById(int id);
 }

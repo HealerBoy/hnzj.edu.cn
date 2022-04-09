@@ -1,5 +1,4 @@
 package hnzj.edu.cn.dao.impl;
-
 import hnzj.edu.cn.dao.StudentDao;
 import hnzj.edu.cn.entity.Student;
 import hnzj.edu.cn.utils.MybatisUtils;
@@ -8,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository("studentDao")
 public class StudentDaoImpl implements StudentDao {
-    private SqlSession sqlSession;
-    private StudentDao studentDao;
+    SqlSession sqlSession;
+    StudentDao studentDao;
     @Override
     public int insertStudent(Student student) {
         sqlSession= MybatisUtils.getSqlSession();
@@ -20,6 +19,8 @@ public class StudentDaoImpl implements StudentDao {
         }else{
             System.out.println("数据插入失败");
         }
+        sqlSession.commit();
+        sqlSession.close();
         return result;
     }
 
@@ -33,6 +34,8 @@ public class StudentDaoImpl implements StudentDao {
         }else{
             System.out.println("数据删除失败");
         }
+        sqlSession.commit();
+        sqlSession.close();
         return result;
     }
 
@@ -46,6 +49,8 @@ public class StudentDaoImpl implements StudentDao {
         }else{
             System.out.println("数据修改失败");
         }
+        sqlSession.commit();
+        sqlSession.close();
         return result;
     }
 
@@ -54,5 +59,6 @@ public class StudentDaoImpl implements StudentDao {
         sqlSession = MybatisUtils.getSqlSession();
         studentDao = sqlSession.getMapper(StudentDao.class);
         return studentDao.selectById(id);
+
     }
 }

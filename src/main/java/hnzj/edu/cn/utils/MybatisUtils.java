@@ -21,7 +21,7 @@ public class MybatisUtils {
         SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(reader);
         return sqlSessionFactory.openSession();
     }
-    public void destroy(){
+    public static void destroy(){
         MybatisUtils.getSqlSession().close();
     }
 }
