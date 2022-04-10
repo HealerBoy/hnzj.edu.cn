@@ -11,6 +11,8 @@
     <title>哈啊哈</title>
   </head>
   <body>
-  哈哈
+  <label>
+    <input type="text">
+  </label>
   </body>
 </html>

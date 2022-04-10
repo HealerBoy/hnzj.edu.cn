@@ -7,13 +7,27 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationTest {
     public static final Logger logger=Logger.getLogger(AnnotationTest.class);
-
-    public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        StudentController studentController = (StudentController) applicationContext.getBean("studentController");
-        Student student = (Student) applicationContext.getBean("student");
-        studentController.insertStudent(student);
+    public static ApplicationContext applicationContext;
+    public StudentController studentController;
+    public Student student;
+    public static StudentController getStudentController(){
+        applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        return (StudentController) applicationContext.getBean("studentController");
+    }
+    public static Student getStudent(){
+        applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        return (Student) applicationContext.getBean("student");
+    }
+    @Test
+    public void insertStudentTest(){
+        student = getStudent();
+        getStudentController().insertStudent(student);
         logger.error("error");
         logger.info("in1fo");
+    }
+    @Test
+    public void selectStudentTest(){
+        student = getStudentController().selectById(1);
+        System.out.println(student.toString());
     }
 }

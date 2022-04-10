@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component("student")
 @Scope("singleton")
 public class Student {
-    @Value("2")
+    @Value("1")
     private int id;
     @Value("成自飞")
     private String name;

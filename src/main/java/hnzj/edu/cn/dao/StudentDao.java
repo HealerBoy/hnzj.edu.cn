@@ -10,7 +10,6 @@ public interface StudentDao {
     int insertStudent(Student student);
     @Delete("delete from student where id = #{id}")
     int deleteById(int id);
-
     //@Update("update student set name=#{name}")
     int updateStudent(Student student);
     @Select("select * from student where id = #{id}")

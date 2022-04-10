@@ -8,8 +8,8 @@ import javax.annotation.Resource;
 public class StudentController {
     @Resource(name = "studentService")
     StudentService studentService;
-    public void insertStudent(Student student) {
-        this.studentService.insertStudent(student);
+    public int insertStudent(Student student) {
+        return this.studentService.insertStudent(student);
     }
 
     public int deleteById(int id) {
