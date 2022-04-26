@@ -3,55 +3,28 @@ import hnzj.edu.cn.dao.StudentDao;
 import hnzj.edu.cn.entity.Student;
 import hnzj.edu.cn.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
 
-@Repository("studentDao")
 public class StudentDaoImpl implements StudentDao {
-    SqlSession sqlSession;
+    public static SqlSession sqlSession;
     StudentDao studentDao;
     @Override
     public int insertStudent(Student student) {
         sqlSession= MybatisUtils.getSqlSession();
         studentDao=sqlSession.getMapper(StudentDao.class);
-        int result=studentDao.insertStudent(student);
-        if(result > 0){
-            System.out.println("数据插入成功");
-        }else{
-            System.out.println("数据插入失败");
-        }
-        sqlSession.commit();
-        sqlSession.close();
-        return result;
+        return studentDao.insertStudent(student);
     }
-
     @Override
     public int deleteById(int id) {
         sqlSession= MybatisUtils.getSqlSession();
         studentDao=sqlSession.getMapper(StudentDao.class);
-        int result=studentDao.deleteById(id);
-        if(result > 0){
-            System.out.println("数据删除成功");
-        }else{
-            System.out.println("数据删除失败");
-        }
-        sqlSession.commit();
-        sqlSession.close();
-        return result;
+        return studentDao.deleteById(id);
     }
 
     @Override
     public int updateStudent(Student student) {
         sqlSession= MybatisUtils.getSqlSession();
         studentDao=sqlSession.getMapper(StudentDao.class);
-        int result=studentDao.updateStudent(student);
-        if(result > 0){
-            System.out.println("数据修改成功");
-        }else{
-            System.out.println("数据修改失败");
-        }
-        sqlSession.commit();
-        sqlSession.close();
-        return result;
+        return studentDao.updateStudent(student);
     }
 
     @Override
@@ -59,6 +32,5 @@ public class StudentDaoImpl implements StudentDao {
         sqlSession = MybatisUtils.getSqlSession();
         studentDao = sqlSession.getMapper(StudentDao.class);
         return studentDao.selectById(id);
-
     }
 }

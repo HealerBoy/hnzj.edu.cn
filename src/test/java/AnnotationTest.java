@@ -1,4 +1,5 @@
 import hnzj.edu.cn.controller.StudentController;
+import hnzj.edu.cn.dao.StudentDao;
 import hnzj.edu.cn.entity.Student;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -8,8 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AnnotationTest {
     public static final Logger logger=Logger.getLogger(AnnotationTest.class);
     public static ApplicationContext applicationContext;
-    public StudentController studentController;
     public Student student;
+
     public static StudentController getStudentController(){
         applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         return (StudentController) applicationContext.getBean("studentController");
